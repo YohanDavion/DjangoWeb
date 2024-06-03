@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion de Matériel</title>
+</head>
+<body>
+    <h1>Gestion de Prêt de Matériel Multimédia</h1>
+
+    <h2>Enseignants</h2>
+    <ul>
+        <li><a href="{% url 'enregistrer_enseignant' %}">Enregistrer un enseignant</a></li>
+        {% for enseignant in enseignants %}
+            <li><a href="{% url 'voir_materiel_enseignant' enseignant.id %}">{{ enseignant.nom }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Matériel</h2>
+    <ul>
+        <li><a href="{% url 'enregistrer_materiel' %}">Enregistrer un matériel</a></li>
+        {% for materiel in materiels %}
+            <li><a href="{% url 'voir_emplacement_materiel' materiel.id %}">{{ materiel.nom }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Salles</h2>
+    <ul>
+        {% for salle in salles %}
+            <li><a href="{% url 'voir_materiel_salle' salle.id %}">Salle {{ salle.numero }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Passations</h2>
+    <ul>
+        <li><a href="{% url 'changer_possesseur' %}">Changer de possesseur</a></li>
+    </ul>
+</body>
+</html>
