@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Enregistrer un matériel</title>
 </head>
 <body>
-$END$
+    <h1>Enregistrer un matériel</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enregistrer</button>
+    </form>
 </body>
 </html>

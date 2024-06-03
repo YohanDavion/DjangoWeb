@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Matériel de {{ enseignant.nom }}</title>
 </head>
 <body>
-$END$
+    <h1>Matériel de {{ enseignant.nom }}</h1>
+
+    <h2>Responsable de :</h2>
+    <ul>
+        {% for materiel in materiels_responsables %}
+            <li>{{ materiel.nom }}</li>
+        {% empty %}
+            <li>Aucun matériel trouvé.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Possède :</h2>
+    <ul>
+        {% for materiel in materiels_possedes %}
+            <li>{{ materiel.nom }}</li>
+        {% empty %}
+            <li>Aucun matériel trouvé.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

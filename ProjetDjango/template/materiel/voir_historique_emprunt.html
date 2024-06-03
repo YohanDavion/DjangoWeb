@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Historique d'emprunt de {{ materiel.nom }}</title>
 </head>
 <body>
-$END$
+    <h1>Historique d'emprunt de {{ materiel.nom }}</h1>
+    <ul>
+        {% for passation in passations %}
+            <li>{{ passation.date }} - {{ passation.ancien_possesseur }} -> {{ passation.nouveau_possesseur }}</li>
+        {% empty %}
+            <li>Aucune passation trouvée pour ce matériel.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Emprunteur de {{ materiel.nom }}</title>
 </head>
 <body>
-
+    <h1>Emprunteur de {{ materiel.nom }}</h1>
+    {% if possesseur %}
+        <p>{{ possesseur.nom }}</p>
+    {% else %}
+        <p>Ce matériel n'est pas emprunté.</p>
+    {% endif %}
 </body>
 </html>

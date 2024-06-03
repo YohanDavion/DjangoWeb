@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Emplacement de {{ materiel.nom }}</title>
 </head>
 <body>
-
+    <h1>Emplacement de {{ materiel.nom }}</h1>
+    {% if materiel.salle %}
+        <p>Se trouve dans la salle {{ materiel.salle }}.</p>
+    {% else %}
+        <p>Aucun emplacement trouvé pour ce matériel.</p>
+    {% endif %}
 </body>
 </html>
